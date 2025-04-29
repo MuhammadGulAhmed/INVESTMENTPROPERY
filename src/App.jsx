@@ -9,6 +9,8 @@ import OtpVerification from './OtpVerification';
 import Home from './home';
 import PropertyListing from './PropertyListing';
 import HomeFilter from './components/HomeFilter';
+import AboutUs from './AboutUs';
+import PropertyDetail from './PropertyDetail';
 
 
 function App() {
@@ -30,6 +32,8 @@ function App() {
         <Route path="/Home" element={<Home/>} />
         <Route path="/PropertyListing" element={<PropertyListing/>} />
         <Route path="/HomeFilter" element={<HomeFilter/>} />
+        <Route path="/aboutus" element={<AboutUs/>} />
+        <Route path="/PropertyDetail" element={<PropertyDetail/>} />
       </Routes>
 
     </Router>
