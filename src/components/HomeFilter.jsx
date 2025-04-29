@@ -28,7 +28,7 @@ function HomeFilter() {
     { name: "Property Listing", path: "/propertylisting" },
     { name: "About Us", path: "/aboutus" },
     { name: "Contact Us", path: "/contactus" },
-    { name: "Assets", path: "/assets" },
+    { name: "Assets", path: "/assets" },NNN
   ];
 
   return (
