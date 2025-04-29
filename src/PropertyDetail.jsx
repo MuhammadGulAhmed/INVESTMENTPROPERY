@@ -1,10 +1,10 @@
 import React from 'react'
-import 
+import mainpage
 
 function PropertyDetail() {
   return (
     <>
-     <MainPage/>
+     
     </>
   )
 }
