@@ -60,7 +60,7 @@ function Home() {
 
     {/*help people find the property section */}
 
-    <div className="bg-[#2E429E] flex items-center py-[5%] px-[10%] ">
+    <div className="bg-[#2E429E] flex justify-center items-center py-[5%] px-[10%] ">
 
       <div className="flex  flex-col">
         <img className="w-2" src="/tiny-circle.png" alt="" />
@@ -95,7 +95,7 @@ function Home() {
       </div>
 
       
-      <img className="w-[55%]" src="/Section-img.png" alt="" />
+     <div> <img className="w-[81rem] h-[32rem]" src="/Section-img.png" alt="" /></div>
 
     </div>
 
