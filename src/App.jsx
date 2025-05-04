@@ -11,6 +11,7 @@ import PropertyListing from './PropertyListing';
 import HomeFilter from './components/HomeFilter';
 import PropertyDetail from './PropertyDetail';
 import AboutUs from './components/AboutUs';
+import ContactUs from './components/ContactUs';
 
 
 function App() {
@@ -28,10 +29,11 @@ function App() {
         <Route path="/EmailVerification" element={<EmailVerification/>} />
         <Route path="/OtpVerification" element={<OtpVerification/>} />
         <Route path="/Home" element={<Home/>} />
-        <Route path="/PropertyListing" element={<PropertyListing/>} />
+        {/* <Route path="/PropertyListing" element={<PropertyListing/>} /> */}
         <Route path="/HomeFilter" element={<HomeFilter/>} />
         <Route path="/aboutus" element={<AboutUs/>} />
-        <Route path="/PropertyDetail" element={<PropertyDetail/>} />
+        <Route path="/propertylisting" element={<PropertyDetail/>} />
+        <Route path="/contactus" element={<ContactUs/>} />
       </Routes>
 
     </Router>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import MainPage from './MainPage'
 import Footer from './Footer'
 import image from "../assets/Aboutimage.png"
@@ -7,15 +7,70 @@ import image3 from "../assets/Aboutimage3.png"
 import CustomLinearProgress from './CustomizedProgressbar'
 import { useInView } from 'react-intersection-observer'
 import VideoPlayer from './Videoplayer'
+import Textoverlap from './Textoverlap'
+import AgentCard from './AgentCard'
+import imageo1 from "../assets/Agent1.jpg"
+import imageo2 from "../assets/Agent2.jpg"
+import imageo3 from "../assets/Agent3.jpg"
+import imageo4 from "../assets/Agent4.jpg"
+import BlogPage from './BlogPage'
+import video from "../assets/sample.mp4"
+import HomeFilter from './HomeFilter'
+import { motion, AnimatePresence } from 'framer-motion';
 
 function AboutUs() {
   const { ref: progressRef, inView } = useInView({
     triggerOnce: true, // load once when in view
     threshold: 0.5     // trigger when 50% of the component is visible
   });
+
+  const [play,setplay]=useState(false)
+  const handleclick= ()=>{
+    setplay(true)
+  }
+  const textoverlay=[{
+    id:3, heading:"Our Agents" , paragraph1:"Expertise Is Here" ,  paragraph2:"Our Exclusive Agetns"
+    
+      }]
+
+      const agents = [
+        {
+          id: 1,
+          name: "Andren Willium",
+          agency: "Sunshine",
+          phone: "+121 511 4522",
+          listings: "08",
+          image: imageo1 // Replace with the correct local or external image path
+        },        {
+          id: 1,
+          name: "Polly Matzinger",
+          agency: "Sweet Home",
+          phone: "+121 179 4865",
+          listings: "06",
+          image: imageo2 // Replace with the correct local or external image path
+        },
+        {
+          id: 1,
+          name: "Patty Watson",
+          agency: "Eco Builders",
+          phone: "+121 584 6254",
+          listings: "11",
+          image: imageo3 // Replace with the correct local or external image path
+        },
+        {
+          id: 1,
+          name: "Sarah Boysen",
+          agency: "Mark Street",
+          phone: "+121 458 4621",
+          listings: "07",
+          image: imageo4 // Replace with the correct local or external image path
+        }
+        // Add more agents here if needed
+      ];
+
   return (
     <div>
-      <MainPage/>
+      <HomeFilter page="aboutus"/>
    
       <div className=' grid grid-cols-2 px-[12%] py-[5%] gap-15'>
 
@@ -53,7 +108,7 @@ function AboutUs() {
                           <div className='flex flex-col'>
 
                                   <span className="material-icons" style={{ fontSize: '48px', color: '#2E429E' }}>
-                                          apartment
+                                  real_estate_agent
                                   </span>
 
                                   <div>
@@ -111,36 +166,93 @@ function AboutUs() {
       </div>
 
       <div
-      className="bg-cover bg-center h-[400px] px-[12%] py-[5%] flex items-center justify-center "
-      style={{ backgroundImage: `url(${image3})` }}  >
-      {/* Your content here */}
+  className="bg-cover bg-center h-[400px] px-[12%] py-[5%] flex items-center justify-center"
+  style={{ backgroundImage: `url(${image3})` }}
+>
+  <div className="flex flex-row justify-center items-center content-center gap-5">
+    <AnimatePresence mode="wait">
+      {!play ? (
+        <motion.div
+          key="content"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.5 }}
+          className={`bg-white relative flex flex-col px-[4%] py-[4%] gap-5 w-[500px] rounded-xl`}
+        >
+          <span className="text-[#2E429E] uppercase font-black font-Ubuntu">. Let’s Take a Tour</span>
+          <span className="text-black font-bold text-[28px]">Search Property Smarter, Quicker & Anywhere</span>
 
-                    <div className='flex flex-row justify-center items-center content-center gap-5  '>
-                          <div className='bg-white flex flex-col px-[4%] py-[4%] gap-5'>
-                                <span className='text-[#2E429E] uppercase font-black font-Ubuntu'>. Let’s Take a Tour</span>
-                                <span className='text-black font-bold text-[28px] ' >Search Property Smarter, Quicker & Anywhere</span>
+          <div className="flex flex-row items-center content-center gap-3">
+            <span
+              onClick={handleclick}
+              className="cursor-pointer material-icons text-[#2E429E]"
+              style={{ fontSize: '48px' }}
+            >
+              play_circle
+            </span>
+            <span className="text-[14px] font-Roboto font-semibold text-[#70778B]">Play Video</span>
+          </div>
+        </motion.div>
+      ) : (
+        <motion.div
+          key="video"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ duration: 0.5 }}
+          className=" relative px-[4%] py-[4%] w-[600px] rounded-xl"
+        >
+          <video
+            src={video}
+            controls
+            autoPlay
+            onPause={() => setplay(false)}
+            className="w-full h-auto rounded-xl"
+          />
+        </motion.div>
+      )}
+    </AnimatePresence>
 
-                                <div className='flex flex-row items-center content-center  gap-3'>
+    <h1
+      className="text-[85px] font-Inter font-normal text-white"
+    >
+      Property For All
+    </h1>
+  </div>
 
-                                          <div>
-                                                    <span class="material-icons text-[#2E429E]" style={{ fontSize: '48px'}}>
-                                                    play_circle
-                                                </span>
-                                          </div>
+</div>
 
-                                          <div>
-                                              <span className='text-[14px] font-Roboto font-semibold text-[#70778B]'>Play Video</span>
-                                          </div>
-                                      
-                                  
-                                </div>
-                          </div>
+    <div className='flex flex-col justify-center gap-8 px-[12%] py-[5%]  '>
 
-                          <h1 className='text-[85px] font-Inter font-normal text-white'>Property For All</h1>
-                    </div>
-      
+         <Textoverlap textoverlay={textoverlay}/>
+         <div className='flex flex-row justify-center'>
+
+         {agents.map((agent) => (
+        <AgentCard
+          key={agent.id}
+          name={agent.name}
+          agency={agent.agency}
+          phone={agent.phone}
+          listings={agent.listings}
+          image={agent.image}
+        />
+      ))}
+
+         </div>
+
+
+
+    </div> 
+
+    <div className='mb-20'>
+      <BlogPage/>
+    </div> 
+
+    <div className=''>
+      <Footer/>
     </div>
-     <Footer/>
+    
      
     </div>
     

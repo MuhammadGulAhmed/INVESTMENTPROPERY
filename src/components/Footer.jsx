@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from './Includes/Button.jsx';
 import { 
   Phone, 
   MapPin, 
@@ -63,7 +64,7 @@ function Footer() {
           <p className="text-[#212121] text-[1.35rem] font-medium">Newsletter</p>
           <img className="w-[1.9rem]" src="/border-bar.png" alt="" />
           <input className="bg-[#FFFFFF] text-[#788593] outline-none p-[0.7rem] " type="text" placeholder="Enter e-mail addess" />
-          <button className="text-[#FFFFFF] font-medium text-[0.9rem] bg-[#2E429E] p-[0.7rem] ">SUBSCRIBE</button>
+         <Button name="SUBSCRIBE"/>
           <p className="text-[0.9rem] text-[#788593] font-normal">We never span you!</p>
         </div>
 
