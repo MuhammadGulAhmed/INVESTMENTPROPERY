@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import { 
   Phone, 
@@ -21,7 +21,7 @@ import SearchFilter from "./SearchFilter";
 
 function HomeFilter() {
 
-  const [active, setActive] = useState("Home");
+  const location = useLocation();
 
   // Manually defined nav items
   const navItems = [
@@ -57,20 +57,21 @@ function HomeFilter() {
         <div className='flex justify-around items-center h-20 bg-[#0E2E50] mt-[5%]'>
        
         <ul className="ml-[12%] flex gap-10 text-[1rem] text-[#FFFFFF] font-medium">
-            {navItems.map((item) => (
-              <li key={item.name}>
-                <Link
-                  to={item.path}
-                  className={`pb-6.5 px-2.5 cursor-pointer transition-all duration-200 ${
-                    active === item.name ? "border-b-2 border-[#50FFE4]" : "border-b-2 border-transparent"
-                  }`}
-                  onClick={() => setActive(item.name)}
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+      {navItems.map((item) => (
+        <li key={item.name}>
+          <Link
+            to={item.path}
+            className={`pb-6.5 px-2.5 cursor-pointer transition-all duration-200 ${
+              location.pathname === item.path
+                ? "border-b-2 border-[#50FFE4]"
+                : "border-b-2 border-transparent"
+            }`}
+          >
+            {item.name}
+          </Link>
+        </li>
+      ))}
+    </ul>
 
                    <div className="userprofile h-10 bg-[#2E429E] cursor-pointer rounded-4xl flex items-center justify-center ">
                       <div className="bg-[#273886] px-3 py-2.5 rounded-l-4xl "><CircleUserRound className="cursor-pointer" size={20} color="#FFFFFF"/></div>
