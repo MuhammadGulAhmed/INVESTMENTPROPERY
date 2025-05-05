@@ -17,7 +17,12 @@ import {
   MoveRight, 
   Mail 
 } from 'lucide-react';
+import Textoverlap from "./components/Textoverlap";
 
+const textoverlay=[{
+  id:1, heading:"Speciality" , paragraph1:"What we Do" ,  paragraph2:"Our Main Speciality"
+   
+     }]
 
 function Home() {
   
@@ -29,9 +34,9 @@ function Home() {
           {/*   Speciality  */}
 
 
-    <div className="bg-[#F1F4FF] p-[3%] pb-[7%] flex flex-col items-center justify-center">
-         <div>
-          <img className="mb-[7%]" src="/speciality.png" alt="" />
+    <div className="bg-[#F1F4FF] p-[3%] pb-[7%] flex flex-col items-center gap-12 justify-center">
+         <div className="mt-5">
+          <Textoverlap textoverlay={textoverlay}/>
          </div>
 
          <div className="flex items-center justify-center">

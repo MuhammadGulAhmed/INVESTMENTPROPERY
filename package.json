@@ -12,21 +12,31 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+
+    "@fontsource/mulish": "^5.2.5",
+    "@mui/material": "^7.0.2",
+
     "@mui/icons-material": "^7.0.2",
     "@mui/material": "^7.0.2",
     "@mui/styled-engine-sc": "^7.0.2",
+
     "@tailwindcss/vite": "^4.0.12",
+    "framer-motion": "^12.9.4",
     "lucide-react": "^0.483.0",
     "rc-slider": "^11.1.8",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-flags-select": "^2.4.0",
+
+    "react-intersection-observer": "^9.16.0",
+
     "react-router-dom": "^7.3.0",
     "styled-components": "^6.1.17",
     "tailwindcss": "^4.0.12"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
