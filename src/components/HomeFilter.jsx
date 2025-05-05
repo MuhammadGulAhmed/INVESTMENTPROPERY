@@ -49,7 +49,10 @@ function HomeFilter({page}) {
       <div className="flex justify-around items-center h-20 bg-[#0E2E50] ">
       <ul className="ml-[12%] flex gap-10 text-[1rem] text-[#FFFFFF] font-medium">
                {navItems.map((item) => {
-                 const isActive = location.pathname === item.path;
+                 const isActive = item.path === "/Home" 
+                 ? location.pathname === "/Home" || location.pathname.startsWith("/PropertyDetail")
+                 : location.pathname === item.path;
+               
                  return (
                    <li key={item.id}>
                      <Link

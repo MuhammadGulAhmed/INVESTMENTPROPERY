@@ -32,7 +32,8 @@ function App() {
         {/* <Route path="/PropertyListing" element={<PropertyListing/>} /> */}
         <Route path="/HomeFilter" element={<HomeFilter/>} />
         <Route path="/aboutus" element={<AboutUs/>} />
-        <Route path="/propertylisting" element={<PropertyDetail/>} />
+        <Route path="/propertylisting" element={<PropertyListing/>} />
+        <Route path="/PropertyDetail" element={<PropertyDetail/>} />
         <Route path="/contactus" element={<ContactUs/>} />
       </Routes>
 

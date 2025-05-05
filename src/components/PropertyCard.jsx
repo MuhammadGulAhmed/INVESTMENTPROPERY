@@ -13,11 +13,14 @@ import {
   MoveRight, 
   Mail 
 } from 'lucide-react';
+import PropertyDetail from '../PropertyDetail';
+import { Link } from 'react-router-dom'
 
 
 function PropertyCard() {
   return (
     <>
+       <Link to={"/PropertyDetail"}>
        <div className="flex gap-4 p-[2%] gap- shadow-[0px_4px_18px_0px_#C2C8D54D] hover:scale-[1.01]
                           transition-transform duration-300">
                 <img className="w-[35%] h-[94%] mt-[1%] rounded-[0.4rem]" src="/kitchen.png" alt="" />
@@ -53,7 +56,8 @@ function PropertyCard() {
 
                   </div>
              </div>
-           </div>        {/* Card ends here */}
+           </div>
+       </Link>        {/* Card ends here */}
     </>
   )
 }
