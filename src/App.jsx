@@ -11,6 +11,7 @@ import PropertyListing from './PropertyListing';
 import HomeFilter from './components/HomeFilter';
 import AboutUs from './AboutUs';
 import PropertyDetail from './PropertyDetail';
+import Assets from './components/Assets';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <Route path="/HomeFilter" element={<HomeFilter/>} />
         <Route path="/aboutus" element={<AboutUs/>} />
         <Route path="/PropertyDetail" element={<PropertyDetail/>} />
+        <Route path="/Assets" element={<Assets/>} />
       </Routes>
 
     </Router>
