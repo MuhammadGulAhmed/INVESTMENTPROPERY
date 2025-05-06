@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { useLocation } from 'react-router-dom';
 function Textoverlap({textoverlay}) {
     if (!Array.isArray(textoverlay)) {
         return <p>Invalid data</p>; // or return null
@@ -11,7 +11,8 @@ function Textoverlap({textoverlay}) {
         const isHighlighted2 = Object.id === 2;
         const isHighlighted3 = Object.id === 3;
         const isHighlighted5 = Object.id === 5;
-        
+const location= useLocation()
+
         
         return (
           <div className="relative mb-10">
@@ -28,9 +29,11 @@ function Textoverlap({textoverlay}) {
             </p>
       
             {/* Main Heading */}
-            <h2 className={`text-2xl md:text-4xl font-extrabold z-10 relative  ${ isHighlighted5? " text-white font-[Ubuntu] top-10" : "  "} ${isHighlighted2 ? 'left-1' : ''} || ${isHighlighted ? 'text-black' : 'text-[#0E2E50]'} || ${isHighlighted3 ? 'text-center' : ''}`}>
-                    {Object.paragraph2}
-            </h2>
+            {location.pathname==="/contactus"?"" :
+             <h2 className={`text-2xl md:text-4xl font-extrabold z-10 relative  ${ isHighlighted5? " text-white font-[Ubuntu] top-10" : "  "} ${isHighlighted2 ? 'left-1' : ''} || ${isHighlighted ? 'text-black' : 'text-[#0E2E50]'} || ${isHighlighted3 ? 'text-center' : ''}`}>
+             {Object.paragraph2}
+     </h2>}
+           
 
 
              

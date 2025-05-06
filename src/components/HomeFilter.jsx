@@ -71,12 +71,12 @@ function HomeFilter({page}) {
       </div>
 
       {/* Center Property Image */}
-      <div className={`place-items-center cursor-pointer  text-center ${Page ? "relative top-1/2 -translate-y-3/2": ""}`}>
+      <div className={`place-items-center cursor-pointer  text-center ${Page ? "relative top-1/2 -translate-y-3/2": ""} || ${location.pathname==="/contactus"?"mt-6":""}`}>
          <Textoverlap textoverlay={textoverlay}/>
       </div>
 
       {/* Search Filter Component */}
-      {Page?"":
+      {Page || location.pathname==="/contactus"?"":
        <div className="mt-5">
        <SearchFilter />
  
