@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import MainPage from './MainPage'
 import Footer from './Footer'
 import image from "../assets/Aboutimage.png"
 import image2 from "../assets/Aboutimage2.png"

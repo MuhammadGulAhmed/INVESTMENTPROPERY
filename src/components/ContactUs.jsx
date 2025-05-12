@@ -40,46 +40,55 @@ function ContactUs() {
     <p className='text-[15px] font-[Roboto] font-normal text-[#70778B]'>Borem ipsum dolor sit amet conse ctetur adipisicing elit sed do eiusmod Eorem ipsum dolor sit amet conse ctetur.</p>
   </div>
 
-  <div style={{ boxShadow: '0px 11px 35px 0px #C2C8D552' }} className='bg-[#FFFFFF01] rounded-[10px] flex flex-row gap-5 border-[1px] border-solid border-[#E4E9F2] p-9'>
+  <div
+  className="relative z-10 overflow-hidden rounded-[10px] flex flex-row gap-5 border border-[#E4E9F2] p-9 bg-white shadow-[0px_11px_35px_0px_#C2C8D552]
+             before:content-[''] before:absolute before:inset-0 before:bg-blue-900 before:scale-x-0 before:origin-left
+             before:transition-transform before:duration-500 hover:before:scale-x-100
+             before:z-[-10]  text-black hover:text-white transition-colors duration-500"
+><div className=''>
 
-  <div className=' '>
-
-<div className='w-15 border-[2px] border-solid border-[#E4E9F2]  h-15 rounded-full bg-[#F9FBFE] flex items-center justify-center'>
-<MapPin color="blue" />
-</div>
-        
- 
-
-</div>
-
-          <div className='flex flex-col gap-1'>
-            <h2 className='text-[15px] font-medium font-[Roboto] text-[#70778B]'>Location</h2>
-            <h1 className='text-[18px] font-medium font-[Roboto] text-black'>131 Martens Place, Alexandra Hills, Australia.</h1>
-          </div>
+<div className="w-15 h-15 border-2 border-[#E4E9F2] rounded-full bg-[#F9FBFE] flex items-center justify-center">
+    <MapPin className="text-blue-700 transition-colors duration-500 group-hover:text-white" />
   </div>
 
+</div>
+  
+  <div className="flex flex-col gap-1 ">
+    <h2 className="text-[15px] font-medium font-[Roboto] text-[#70778B]">Location</h2>
+    <h1 className="text-[18px] font-medium font-[Roboto]">131 Martens Place, Alexandra Hills, Australia.</h1>
+  </div>
+</div>
+    
 
-  <div style={{ boxShadow: '0px 11px 35px 0px #C2C8D552' }} className='bg-[#FFFFFF01] gap-7 flex flex-row rounded-[10px]   border-[1px] border-solid border-[#E4E9F2] p-9'>
-  <div className=' '>
 
-<div className='w-15 border-[2px] border-solid border-[#E4E9F2]  h-15 rounded-full bg-[#F9FBFE] flex items-center justify-center'>
+  <div className="relative  z-10 overflow-hidden rounded-[10px] flex flex-row gap-5 border border-[#E4E9F2] p-9 bg-white shadow-[0px_11px_35px_0px_#C2C8D552]
+             before:content-[''] before:absolute before:inset-0 before:bg-blue-900 before:scale-x-0 before:origin-left
+             before:transition-transform before:duration-500 hover:before:scale-x-100
+             before:z-[-10] text-black hover:text-white transition-colors duration-500">
+  
+<div className=''>
+<div className='w-15 border-[2px] border-solid border-[#E4E9F2]  h-15 rounded-full bg-[#F9FBFE] flex items-center justify-center '>
 <Phone color="blue" />
 </div>
         
- 
-
 </div>
 
 
-<div className='flex flex-col gap-1'>
+
+<div className='flex flex-col gap-1 '>
 <h2 className='text-[15px] font-medium font-[Roboto] text-[#70778B]'>Emergency Call</h2>
-<h1 className='text-[18px] font-medium font-[Roboto] text-black'>+86 21 6137 9292</h1>
+<h1 className='text-[18px] font-medium font-[Roboto]'>+86 21 6137 9292</h1>
 </div>
+
 </div>
 
 
 
-<div style={{ boxShadow: '0px 11px 35px 0px #C2C8D552' }} className='bg-[#FFFFFF01] gap-7 rounded-[10px] flex flex-row  border-[1px border-solid border-[#E4E9F2] p-9'>
+<div className="relative z-10 overflow-hidden rounded-[10px] flex flex-row gap-5 border border-[#E4E9F2] p-9 bg-white shadow-[0px_11px_35px_0px_#C2C8D552]
+             before:content-[''] before:absolute before:inset-0 before:bg-blue-900 before:scale-x-0 before:origin-left
+             before:transition-transform before:duration-500 hover:before:scale-x-100
+             before:z-[-10] text-black hover:text-white transition-colors duration-500">
+  
 
 <div className=' '>
 
@@ -91,9 +100,9 @@ function ContactUs() {
 
 </div>
 
-<div className='flex flex-col gap-1'>
+<div className='flex flex-col gap-1 '>
 <h2 className='text-[15px] font-medium font-[Roboto] text-[#70778B]'>Follow Us On</h2>
-<h1 className='text-[18px] font-medium font-[Roboto] text-black'>131 Martens Place, Alexandra Hills, Australia.</h1>
+<h1 className='text-[18px] font-medium font-[Roboto]'>131 Martens Place, Alexandra Hills, Australia.</h1>
 </div>
 </div>
 

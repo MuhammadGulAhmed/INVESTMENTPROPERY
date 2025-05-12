@@ -9,9 +9,15 @@ import OtpVerification from './OtpVerification';
 import Home from './home';
 import PropertyListing from './PropertyListing';
 import HomeFilter from './components/HomeFilter';
+
 import PropertyDetail from './PropertyDetail';
-import AboutUs from './components/AboutUs';
+
 import ContactUs from './components/ContactUs';
+
+import AboutUs from './components/AboutUs';
+import Assets1 from './components/Assets1';
+import AdminDashboard from './components/AdminDashboard';
+
 
 
 function App() {
@@ -32,9 +38,15 @@ function App() {
         {/* <Route path="/PropertyListing" element={<PropertyListing/>} /> */}
         <Route path="/HomeFilter" element={<HomeFilter/>} />
         <Route path="/aboutus" element={<AboutUs/>} />
+
         <Route path="/propertylisting" element={<PropertyListing/>} />
         <Route path="/PropertyDetail" element={<PropertyDetail/>} />
         <Route path="/contactus" element={<ContactUs/>} />
+
+        <Route path="/PropertyDetail" element={<PropertyDetail/>} />
+        <Route path="/assets" element={<Assets1/>} />
+         <Route path="/AdminDashboard" element={<AdminDashboard/>} />
+
       </Routes>
 
     </Router>
