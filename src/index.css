@@ -57,3 +57,53 @@ body {
   font-style: italic;
 }
 
+Custom Scrollbar
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #1a1f3faf;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #5a6a8d;
+  }
+  .scroll-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scroll-hide {
+    -ms-overflow-style: none;  /* IE/Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+
+  
+  .scroll-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scroll-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+
+  .notification-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+
+
+.notification-dot {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+}
+  

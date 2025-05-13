@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SocialLogin from './components/SocialLogin';
-import Button from './components/Button';
 import Home from './home';
+import Button from './components/Includes/Button';
+import Textoverlap from './components/Textoverlap';
 
 function OtpVerification() {
+
+  const textoverlay=[{
+    id:10, heading:"Properties" , paragraph1:"LATEST LISTINGS" ,  paragraph2:"Featured Property"
+     
+       }]
+
   const [otp, setOtp] = useState(new Array(4).fill(""));
 
   function handleChange(e, index) {
@@ -21,17 +28,21 @@ function OtpVerification() {
     }
   }
 
+
   return (
     <>
-      <div className='grid gap-10 md:grid-cols-2 min-h-screen'>
-        <div className='bg-[#F1F4FF] flex items-center justify-center'>
-          <img src='/listing-property.png' alt='Trunext Logo' />
+      <div className='grid grid-cols-1 md:grid-cols-2 h-screen'>
+
+        <div className='bg-[#F1F4FF] flex items-center justify-center  h-[20vh] md:h-screen'>
+        <Textoverlap textoverlay={textoverlay}/>
         </div>
 
-        <div className='flex flex-col ml-6.5 w-[85%] my-8'>
+        <div className='overflow-auto  max-h-[calc(100vh-0px)] h-[80vh] md:h-screen flex flex-col  items-center '>
+
+        <div className='flex flex-col  w-[85%]  justify-center items-center  '>
           <SocialLogin
-            page='Create Account'
-            instructions='Follow the instructions to make it easier to register and you will be able to explore inside.'
+            page='Email Verification'
+            instructions='We have sent an OTP to sherjeelahmed1017@gmail.com.Please enter it below to verify your account.'
           />
 
           <div className='flex gap-3 items-center justify-center my-9'>
@@ -49,14 +60,20 @@ function OtpVerification() {
             ))}
           </div>
 
-          <div>
-            <Link to='/Home'><Button buttonname='Verify' /></Link>
-            <p className='flex items-center justify-center text-[#11175D] mt-5'>
-              Didn't receive the OTP?
-              <span className='text-[1rem] font-bold ml-1'>Resend OTP</span>
-            </p>
+          <div className='w-full'>
+            <Link to='/Home'><Button name='Verify' /></Link>
+            <div className='flex flex-row justify-center gap-2'>
+
+              <span className='flex items-center justify-center text-[#11175D] transition-colors duration-200  cursor-pointer hover:text-black'> Didn't receive the OTP?</span>
+              <span className='cursor-pointer text-[1rem] font-bold transition-colors duration-200 hover:text-[#3f3977] '>Resend OTP</span>
+            </div>
+            
           </div>
         </div>
+
+
+          </div>
+     
       </div>
     </>
   );

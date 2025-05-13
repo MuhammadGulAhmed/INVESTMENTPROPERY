@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import MainPage from './MainPage'
 import Footer from './Footer'
 import image from "../assets/Aboutimage.png"
 import image2 from "../assets/Aboutimage2.png"
@@ -71,105 +70,124 @@ function AboutUs() {
   return (
     <div>
       <HomeFilter page="aboutus"/>
-   
-      <div className=' grid grid-cols-2 px-[12%] py-[5%] gap-15'>
+     
+      <div className='flex w-full flex-col justify-center items-center '>
 
+             <div className=' grid grid-cols-2 px-[12%] py-[5%] max-w-[2500px] mx-auto  gap-10 '>
+
+    <div className='flex flex-col'>
 
           <div>
             <img src={image} alt="" />
           </div>
 
-          <div className='flex flex-col gap-6 '>
+          <div className='flex flex-col gap-15 py-10'>
 
-                <div>
-                  <h1 className='text-[15px] text-[#2E429E] font-medium font-Ubuntu'>ABOUT US</h1>
-                  <h2 className='text-[26px] text-[#212121] font-bold font-Ubuntu '>We're on a Mission to Change View of RealEstate Field.</h2>
-                  <p className='text-[16px] font-normal text-[#70778A] font-Roboto'>when an unknown printer took a galley of type and scrambled it to make type specimen bookt has survived not only five centuries alsoey jequery the leap into electronic typesetting.</p>
-                </div>
+  <div>
+    <h1 className='text-[15px] text-[#2E429E] font-medium font-Ubuntu'>Company Power</h1>
+    <h2 className='text-[26px] text-[#212121] font-bold font-Ubuntu '>The Core Company Values Of Our main Goal</h2>
+    <p className='text-[16px] font-normal text-[#70778A] font-Roboto'>when an unknown printer took a galley of type and scrambled it to make type specimen bookt has survived.</p>
+  </div>
 
-              
-                <div className='flex flex-row'>
+  <div className='flex flex-col gap-5'>
 
-                          <div className='flex flex-col'>
+  <div  className='' ref={progressRef}>
+  {inView && <CustomLinearProgress value={70} />}
+  <label htmlFor="" className='text-black text-[16px] font-medium font-Roboto'>Modern Technology</label>
 
-                                  <span className="material-icons" style={{ fontSize: '48px', color: '#2E429E' }}>
-                                          apartment
-                                  </span>
+  </div>
 
-                                  <div>
-                                    <h1 className='text-[22px] text-[#212121] font-medium'>Modern Villa</h1>
-                                    <p className='text-[16px] font-normal text-[#70778A] font-Roboto leading-[30px]'>when unknown printer took galley
-                                    of type and scrambled.</p>
-                                  </div>
-
-                            
-                          </div>
-
-                          <div className='flex flex-col'>
-
-                                  <span className="material-icons" style={{ fontSize: '48px', color: '#2E429E' }}>
-                                  real_estate_agent
-                                  </span>
-
-                                  <div>
-                                    <h1 className='text-[22px] text-[#212121] font-medium'>Modern Villa</h1>
-                                    <p className='text-[16px] font-normal text-[#70778A] font-Roboto  leading-[30px]'>when unknown printer took galley
-                                    of type and scrambled.</p>
-                                  </div>
+  <div className=''  ref={progressRef}>
+  {inView && <CustomLinearProgress value={90} />}
+  <h1 className='text-black text-[16px] font-medium font-Roboto'>Tax Solution Area</h1>
+  </div>
 
 
-                          </div>
 
-                </div>
+  </div>
+
+
+          </div>
+
+    </div>
+
+    <div className='flex flex-col gap-10'>
+    <div className='flex flex-col gap-6 '>
+
+<div>
+  <h1 className='text-[15px] text-[#2E429E] font-medium font-Ubuntu'>ABOUT US</h1>
+  <h2 className='text-[26px] text-[#212121] font-bold font-Ubuntu '>We're on a Mission to Change View of RealEstate Field.</h2>
+  <p className='  text-[16px] font-normal text-[#70778A] font-Roboto'>when an unknown printer took a galley of type and scrambled it to make type specimen bookt has survived not only five centuries alsoey jequery the leap into electronic typesetting.</p>
+</div>
+
+
+<div className='flex flex-row'>
+
+          <div className='flex flex-col'>
+
+                  <span className="material-icons" style={{ fontSize: '48px', color: '#2E429E' }}>
+                          apartment
+                  </span>
+
+                  <div>
+                    <h1 className='text-[22px] text-[#212121] font-medium'>Modern Villa</h1>
+                    <p className='text-[16px] font-normal text-[#70778A] font-Roboto leading-[30px]'>when unknown printer took galley
+                    of type and scrambled.</p>
+                  </div>
+
+            
+          </div>
+
+          <div className='flex flex-col'>
+
+                  <span className="material-icons" style={{ fontSize: '48px', color: '#2E429E' }}>
+                  real_estate_agent
+                  </span>
+
+                  <div>
+                    <h1 className='text-[22px] text-[#212121] font-medium'>Modern Villa</h1>
+                    <p className='text-[16px] font-normal text-[#70778A] font-Roboto  leading-[30px]'>when unknown printer took galley
+                    of type and scrambled.</p>
+                  </div>
+
+
+          </div>
+
+</div>
+
+
+
+
+
+</div>
+
+     <div className='flex self-start'>
+      {/* <img src={image2} alt="" /> */}
+      <VideoPlayer></VideoPlayer>
+
+    </div>
+    </div>
+   
+    
+
+   
+
+    
+
+
+          </div>
 
           
 
-
-
-          </div>
-
-          <div className='flex flex-col gap-15 py-10'>
-
-                    <div>
-                      <h1 className='text-[15px] text-[#2E429E] font-medium font-Ubuntu'>Company Power</h1>
-                      <h2 className='text-[26px] text-[#212121] font-bold font-Ubuntu '>The Core Company Values Of Our main Goal</h2>
-                      <p className='text-[16px] font-normal text-[#70778A] font-Roboto'>when an unknown printer took a galley of type and scrambled it to make type specimen bookt has survived.</p>
-                    </div>
-                    
-                    <div className='flex flex-col gap-5'>
-
-                    <div  ref={progressRef}>
-                    {inView && <CustomLinearProgress value={70} />}
-                    <label htmlFor="" className='text-black text-[16px] font-medium font-Roboto'>Modern Technology</label>
-                    
-                    </div>
-
-                    <div  ref={progressRef}>
-                    {inView && <CustomLinearProgress value={90} />}
-                    <h1 className='text-black text-[16px] font-medium font-Roboto'>Tax Solution Area</h1>
-                    </div>
-
-
-
-                    </div>
-                    
-
-              </div>
-
-          <div>
-            {/* <img src={image2} alt="" /> */}
-            <VideoPlayer></VideoPlayer>
-
-          </div>
-
+          
 
       </div>
-
+   
       <div
   className="bg-cover bg-center h-[400px] px-[12%] py-[5%] flex items-center justify-center"
   style={{ backgroundImage: `url(${image3})` }}
 >
-  <div className="flex flex-row justify-center items-center content-center gap-5">
+  <div className="flex flex-row justify-between items-center content-center gap-5">
     <AnimatePresence mode="wait">
       {!play ? (
         <motion.div
@@ -215,15 +233,15 @@ function AboutUs() {
     </AnimatePresence>
 
     <h1
-      className="text-[85px] font-Inter font-normal text-white"
+      className="text-[85px] font-Inter font-normal text-white text-nowrap"
     >
       Property For All
     </h1>
   </div>
 
-</div>
+      </div>
 
-    <div className='flex flex-col justify-center gap-8 px-[12%] py-[5%]  '>
+      <div className='flex flex-col justify-center gap-8 px-[12%] py-[5%]  '>
 
          <Textoverlap textoverlay={textoverlay}/>
          <div className='flex flex-row justify-center'>
@@ -243,7 +261,11 @@ function AboutUs() {
 
 
 
-    </div> 
+          </div>
+
+    
+
+     
 
     <div className='mb-20'>
       <BlogPage/>
