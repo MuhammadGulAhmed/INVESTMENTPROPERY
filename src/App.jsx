@@ -9,21 +9,26 @@ import OtpVerification from './OtpVerification';
 import Home from './home';
 import PropertyListing from './PropertyListing';
 import HomeFilter from './components/HomeFilter';
-import AboutUs from './AboutUs';
+
 import PropertyDetail from './PropertyDetail';
+import AboutUs from './components/AboutUs';
+import ContactUs from './components/ContactUs';
+import LoginnRealState from './LoginnRealState'
+
+
+
 import Assets from './components/Assets';
+
 
 
 function App() {
   return (
     <Router>
-
       <Routes>
         {/*default route */}
         <Route path="/" element={<Navigate to="/Welcome" />} />
         {/* other routes */}
         <Route path="/Login/Signup" element={<Signup />} />
-
         <Route path="/Welcome" element={<Welcome/>} />
         <Route path="/Login" element={<Login/>} />
         <Route path="/Signup" element={<Signup/>} />
@@ -31,11 +36,19 @@ function App() {
         <Route path="/EmailVerification" element={<EmailVerification/>} />
         <Route path="/OtpVerification" element={<OtpVerification/>} />
         <Route path="/Home" element={<Home/>} />
-        <Route path="/PropertyListing" element={<PropertyListing/>} />
+        {/* <Route path="/PropertyListing" element={<PropertyListing/>} /> */}
         <Route path="/HomeFilter" element={<HomeFilter/>} />
         <Route path="/aboutus" element={<AboutUs/>} />
+
+        <Route path="/propertylisting" element={<PropertyListing/>} />
         <Route path="/PropertyDetail" element={<PropertyDetail/>} />
+        <Route path="/contactus" element={<ContactUs/>} />
+        
+        <Route path="/PropertyDetail" element={<PropertyDetail/>} />
+
         <Route path="/Assets" element={<Assets/>} />
+        <Route path="/LoginnRealState" element={<LoginnRealState/>} />
+
       </Routes>
 
     </Router>

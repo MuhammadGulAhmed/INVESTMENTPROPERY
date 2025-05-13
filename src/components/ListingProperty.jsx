@@ -1,5 +1,6 @@
 import React from 'react'
 import PropertyCard from './PropertyCard';
+import Textoverlap from './Textoverlap';
 import { 
   Phone, 
   MapPin, 
@@ -16,11 +17,15 @@ import {
 } from 'lucide-react';
 
 function ListingProperty() {
+  const textoverlay=[{
+   id:1, heading:"Speciality" , paragraph1:"What we Do" ,  paragraph2:"Our Main Speciality"
+    
+      }]
   return (
     <>
        <div className="flex flex-col bg-[#FFFFFF] items-center justify-center">
-          <div>
-            <img className="mt-[3%]" src="/listing-property.png" alt="" />
+          <div className='py-13'>
+            <Textoverlap textoverlay={textoverlay}/>
           </div>
 
           {/* CARDS PROPERTYYYYY LISTING */}

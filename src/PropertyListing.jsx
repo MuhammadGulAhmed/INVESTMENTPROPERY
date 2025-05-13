@@ -6,7 +6,7 @@ import Footer from './components/Footer'
 
 function PropertyListing() {
   return (
-    <div>
+    <div className='flex flex-col items-center justify-center'>
       <HomeFilter/>
       <ListingProperty/>
       <BlogPage/>
