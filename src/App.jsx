@@ -17,8 +17,8 @@ import ContactUs from './components/ContactUs';
 import AboutUs from './components/AboutUs';
 import Assets1 from './components/Assets1';
 import AdminDashboard from './components/AdminDashboard';
-
-
+import Transactions from './components/Transactions';
+import Property from "./components/Property"
 
 function App() {
   return (
@@ -45,7 +45,9 @@ function App() {
 
         <Route path="/PropertyDetail" element={<PropertyDetail/>} />
         <Route path="/assets" element={<Assets1/>} />
-         <Route path="/AdminDashboard" element={<AdminDashboard/>} />
+         <Route path="/dashboard" element={<AdminDashboard/>} />
+         <Route path="/Transactions" element={<Transactions/>} />
+         <Route path="/property" element={<Property/>} />
 
       </Routes>
 

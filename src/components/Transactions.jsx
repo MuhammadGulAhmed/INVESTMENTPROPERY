@@ -5,7 +5,7 @@ import StatCard from './StatCard';
 import SalesChart from './SalesChart';
 
 
-function AdminDashboard() {
+function Transactions() {
   return (
     <div className="min-h-screen  flex flex-col">
       {/* Top full-width bar */}
@@ -22,7 +22,7 @@ function AdminDashboard() {
         <Sidebar />
 
         {/* Main content on the right */}
-        <div className="flex flex-col p-4">
+           <div className="flex-1 p-4">
           {/* Stat cards */}
           <div className="flex flex-wrap gap-4 mt-4">
             <StatCard icon="apartment" heading="No. of Properties"   number="2,854"  percentage="7.34%"  day="4"/>
@@ -34,47 +34,16 @@ function AdminDashboard() {
           </div>
 
           {/* Chart */}
-          <div className="mt-6 flex flex-row">
-
-            <div className='flex-1'>
-                 <SalesChart />
-            </div>
-
-            <div className='flex flex-col'>
-
-                <div className='bg-[#2E429E] font-[Figtree] flex flex-row p-3'>
-
-                    <div className='flex flex-col'>
-                        <h1 className=' font-bold text-[24px] text-white '>$117,000.43</h1>
-                        <p className='text-[#FFFFFF80] font-normal'>My Balance</p>
-
-                        <div className='flex flex-row'>
-
-                            <div></div>
-                            <div></div>
-                        </div>
-
-
-                    </div>
-
-                    <div>
-
-                    </div>
-
-
-                </div>
-
-
-
-            </div>
-           
+          <div className="mt-6">
+            <SalesChart />
           </div>
 
           {/* Additional widgets if needed */}
         </div>
+        
       </div>
     </div>
   );
 }
 
-export default AdminDashboard;
+export default Transactions;
