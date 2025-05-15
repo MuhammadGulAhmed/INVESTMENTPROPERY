@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Sidebar from './Sidebar';
 import TopBar from './TopBar';
 import Slider from '@mui/material/Slider';
@@ -13,9 +13,135 @@ import { Link } from 'react-router-dom';
 
 function AdminDashboard() {
   const [priceRange, setPriceRange] = useState([6000, 100000]);
+  const [locationSearch, setLocationSearch] = useState('');
+  const [typeSearch, setTypeSearch] = useState('');
+  const [filteredProperties, setFilteredProperties] = useState([]);
+  
+  // Sample property data - in a real app, this might come from an API
+  const properties = [
+    { 
+      id: 1, 
+      name: "Tungis Luxury", 
+      address: "900, Creside WI 54913", 
+      location: "rwp", 
+      type: "Villas", 
+      price: 85000, 
+      img: pool,
+      bedrooms: 3,
+      bathrooms: 2,
+      squareFoot: 1800,
+      floor: 2,
+      forSale: true
+    },
+    { 
+      id: 2, 
+      name: "Luxury Penthouse", 
+      address: "Sumner Street Los Angeles", 
+      location: "bwp", 
+      type: "Apartment", 
+      price: 95000, 
+      img: pool2,
+      bedrooms: 4,
+      bathrooms: 3,
+      squareFoot: 2200,
+      floor: 8,
+      forSale: false
+    },
+    { 
+      id: 3, 
+      name: "Luxury Apartment", 
+      address: "223, Creside Santa Maria", 
+      location: "isl", 
+      type: "Apartment", 
+      price: 75000, 
+      img: house1,
+      bedrooms: 2,
+      bathrooms: 2,
+      squareFoot: 1500,
+      floor: 5,
+      forSale: true
+    },
+    { 
+      id: 4, 
+      name: "Cozy Cottage", 
+      address: "87 Mountain View, Peshawar", 
+      location: "pes", 
+      type: "Cottage", 
+      price: 45000, 
+      img: house1,
+      bedrooms: 2,
+      bathrooms: 1,
+      squareFoot: 1200,
+      floor: 1,
+      forSale: true
+    },
+    { 
+      id: 5, 
+      name: "Modern Duplex", 
+      address: "42 Seaside Blvd, Karachi", 
+      location: "kci", 
+      type: "Duplex Bungalow", 
+      price: 120000, 
+      img: house1,
+      bedrooms: 5,
+      bathrooms: 3,
+      squareFoot: 3000,
+      floor: 2,
+      forSale: true
+    },
+    { 
+      id: 6, 
+      name: "Family Home", 
+      address: "55 Garden Street, Islamabad", 
+      location: "isl", 
+      type: "Villas", 
+      price: 110000, 
+      img: house1,
+      bedrooms: 4,
+      bathrooms: 3,
+      squareFoot: 2500,
+      floor: 2,
+      forSale: true
+    }
+  ];
+
+  // Filter properties based on search inputs and price range
+  useEffect(() => {
+    let results = properties;
+    
+    // Filter by location if a location is selected
+    if (locationSearch) {
+      results = results.filter(property => 
+        property.location.toLowerCase() === locationSearch.toLowerCase()
+      );
+    }
+    
+    // Filter by type if a search term is entered
+    if (typeSearch) {
+      results = results.filter(property => 
+        property.type.toLowerCase().includes(typeSearch.toLowerCase()) ||
+        property.name.toLowerCase().includes(typeSearch.toLowerCase())
+      );
+    }
+    
+    // Filter by price range
+    results = results.filter(property => 
+      property.price >= priceRange[0] && property.price <= priceRange[1]
+    );
+    
+    setFilteredProperties(results);
+  }, [locationSearch, typeSearch, priceRange]);
 
   const handleSliderChange = (event, newValue) => {
     setPriceRange(newValue);
+  };
+
+  const handleLocationChange = (e) => {
+    setLocationSearch(e.target.value);
+  };
+
+  const handleTypeSearch = (e) => {
+    setTypeSearch(e.target.value);
   };
 
   return (
@@ -32,13 +158,20 @@ function AdminDashboard() {
           <div className='leftsideinfo flex flex-col p-3 border-[1px] rounded-[6px] h-fit shadow-xl border-[#EAEDF1]'>
             <div className='border-b-[1px] border-[#EAEDF1]'>
               <h1 className='text-[#5D7186] font-semibold text-[1rem]'>Properties</h1>
-              <p className='text-[#5D7186] pb-2 font-normal text-[0.865rem]'>Show 15,780 Properties</p>
+              <p className='text-[#5D7186] pb-2 font-normal text-[0.865rem]'>
+                Showing {filteredProperties.length} Properties
+              </p>
             </div>
 
             {/* Location Dropdown */}
             <div className='pt-2'>
               <h1 className='text-[#5D7186] pb-2 font-medium text-[0.865rem]'>Properties Location</h1>
-              <select className="bg-[#FFFFFF] text-[#878C9F] h-[2.5rem] pl-2 w-[17rem] border-[1px] border-[#EAEDF1] outline-none">
+              <select 
+                className="bg-[#FFFFFF] text-[#878C9F] h-[2.5rem] pl-2 w-[17rem] border-[1px] border-[#EAEDF1] outline-none"
+                value={locationSearch}
+                onChange={handleLocationChange}
+              >
+                <option value="">All Locations</option>
                 <option value="rwp">rwp</option>
                 <option value="bwp">bwp</option>
                 <option value="isl">isl</option>
@@ -50,7 +183,13 @@ function AdminDashboard() {
             {/* Type of Place */}
             <div className='pt-2'>
               <h1 className='text-[#5D7186] pb-2 font-medium text-[0.865rem]'>Type Of Place</h1>
-              <input className='bg-[#FFFFFF] text-[#878C9F] h-[2.5rem] pl-2 w-[17rem] border-[1px] border-[#EAEDF1] outline-none' type="text" />
+              <input 
+                className='bg-[#FFFFFF] text-[#878C9F] h-[2.5rem] pl-2 w-[17rem] border-[1px] border-[#EAEDF1] outline-none' 
+                type="text"
+                value={typeSearch}
+                onChange={handleTypeSearch}
+                placeholder="Search by property type or name"
+              />
             </div>
 
             {/* Price Range */}
@@ -173,29 +312,55 @@ function AdminDashboard() {
               </div>
 
               <div className='pt-8'>
-                            
+                {/* Reset filters button */}
+                <button 
+                  onClick={() => {
+                    setLocationSearch('');
+                    setTypeSearch('');
+                    setPriceRange([6000, 100000]);
+                  }}
+                  className='bg-[#F0934E] w-full mt-4 px-4 py-2 rounded-[6px] text-[#FFFFFF] text-[0.865rem] font-normal'
+                >
+                  Reset Filters
+                </button>
               </div>
             </div>
-
-
           </div>
 
-          <div className='rightsideproperty flex  flex-col'>
-              <div className='pb-4  px-5 flex justify-end'>
+          <div className='rightsideproperty flex flex-col'>
+              <div className='pb-4 px-5 flex justify-between items-center'>
+                <p className='text-[#687D92] font-medium'>
+                  Found {filteredProperties.length} matching properties
+                </p>
                 <Link to="/addproperty">
-                 <button className='bg-[#2E429E] px-5 py-2 rounded-[6px]  text-[#FFFFFF] text-[0.865rem] font-normal'>Add New Property</button>
+                  <button className='bg-[#2E429E] px-5 py-2 rounded-[6px] text-[#FFFFFF] text-[0.865rem] font-normal'>
+                    Add New Property
+                  </button>
                 </Link>
               </div>
-              <div className='flex flex-wrap gap-5 pt-5 px-5  overflow-y-auto max-h-[56rem]'>
-                <MyPropertyCard name="Tungis Luxury" address="900 , Creside WI 54913" img={pool} />
-                <MyPropertyCard name="Luxury Penthouse" address="Sumner Street Los Angeles" img={pool2} />
-                <MyPropertyCard name="Luxury Appartment" address="223 , Creside Santa Maria" img={house1} />
-                <MyPropertyCard name="Luxury Appartment" address="223 , Creside Santa Maria" img={house1} />
-                <MyPropertyCard name="Luxury Appartment" address="223 , Creside Santa Maria" img={house1} />
-                <MyPropertyCard name="Luxury Appartment" address="223 , Creside Santa Maria" img={house1} />
+              <div className='flex flex-wrap gap-5 pt-5 px-5 overflow-y-auto max-h-[56rem]'>
+                {filteredProperties.length > 0 ? (
+                  filteredProperties.map(property => (
+                    <MyPropertyCard 
+                      key={property.id}
+                      name={property.name} 
+                      address={property.address} 
+                      img={property.img}
+                      bedrooms={property.bedrooms}
+                      bathrooms={property.bathrooms}
+                      squareFoot={property.squareFoot}
+                      floor={property.floor}
+                      forSale={property.forSale}
+                    />
+                  ))
+                ) : (
+                  <div className='w-full text-center py-8'>
+                    <p className='text-lg text-[#687D92]'>No properties found matching your search criteria.</p>
+                    <p className='text-[#2E429E] mt-2'>Try adjusting your filters or search terms.</p>
+                  </div>
+                )}
               </div>
           </div>
-
         </div>
         </div>
       </div>
