@@ -61,7 +61,7 @@ function Home() {
 
     {/*help people find the property section */}
 
-    <div className="bg-[#2E429E] flex justify-center items-center p-20  ">
+    <div className="bg-[#2E429E] flex justify-center items-center py-20 px-12 ">
 
         <div className="flex  flex-col">
               <img className="w-2" src="/tiny-circle.png" alt="" />

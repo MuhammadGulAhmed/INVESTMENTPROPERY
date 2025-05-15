@@ -12,7 +12,7 @@ function MyPropertyCard({name, address, img}) {
               <div><img src={img} alt="" /></div>
               <div className='flex absolute top-2 left-2 gap-54'>
                   <div className=''> <Instagram className="bg-[#F0934E] p-2 rounded-[8px]"   size={45} color="#FFFFFF" /></div>
-                  <div><p className='py-1.5 rounded-xl font-semibold text-[#FFFFFF] text-[0.82rem] px-5 bg-[#F0934E]'>For Sale</p></div>
+                  <div><p className='py-1.5   text-nowrap  rounded-xl font-semibold text-[#FFFFFF] text-[0.82rem] px-5 bg-[#F0934E]'>For Sale</p></div>
               </div>
             </div>
 
